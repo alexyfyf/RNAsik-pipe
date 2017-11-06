@@ -1,0 +1,30 @@
+include "../src/sikHeader.bds"
+include "../src/sikVersion.bds"
+
+include "../src/sikFqFiles.bds"
+//These are my functions to test from sikFqFiles.bds
+//
+//string getTarDir(string tarFile, string sikDir)
+//string[] getFqFiles(string fqDir, string extn, string sikDir)
+//string{} getSamplesMap(string[] fqFiles,  string samplesSheet)
+//string[] alignerReads(string fqString, string pairIds)
+//string[] getFqPrefix(string fqRead, string[] fqRgxs, string pairIds, string extn)
+//string makeSamplesSheet(string[] fqReads, string[] fqRgxs, string pairIds, string extn, string sikDir)
+//string{} mkBamsMap(string bamsDir, string samplesSheet)
+
+string sikDir = "testRun"
+
+void test01() {
+    if(fqDir.isEmpty()) {
+        error "-fqDir is empty"
+    }
+    string fqFiles = getFqFiles(fqDir, extn, sikDir)
+    if(fqFiles.isEmpty()) {
+        error "function need to return fqFiles"
+    }
+}
+//TODO to check getSamplesMap, perhaps try to check if fqRegex are working
+// i.e splitting occurs, and all those other checks. I guess this is really checking makeSamplesSheet
+void test02() {
+
+}
